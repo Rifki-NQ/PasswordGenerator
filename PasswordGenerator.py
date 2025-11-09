@@ -10,4 +10,5 @@ def password():
     return PASS
 
 print("testing the pull command")
+print("another test line")
 print(password())
