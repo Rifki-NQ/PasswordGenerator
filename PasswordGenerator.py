@@ -8,6 +8,4 @@ def password():
 
     PASS = upper + lower + numbers
     return PASS
-
-print("testing the password generator")
 print(password())
