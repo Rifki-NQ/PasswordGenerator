@@ -8,4 +8,6 @@ def password():
 
     PASS = upper + lower + numbers
     return PASS
+
+print("testing the pull command")
 print(password())
