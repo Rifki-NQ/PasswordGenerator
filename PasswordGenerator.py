@@ -9,6 +9,15 @@ def password():
     PASS = upper + lower + numbers
     return PASS
 
-print("testing the pull command")
-print("another test line")
-print(password())
+def MenuTwo():
+    PASS = password()
+
+#The first menu to be accessed
+while True:
+    print("Password Generator, please use the number index to access the menu")
+    print("1. Show last password made\n2. Create new password\n3. Delete last number")
+    menu = input("Input: ")
+    if menu.isdigit():
+        break
+    else:
+        print("Error: Plese use the number index to access the menu")
