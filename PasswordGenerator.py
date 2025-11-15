@@ -9,17 +9,33 @@ def password():
     PASS = upper + lower + numbers
     return PASS
 
-def MenuTwo():
-    PASS = password()
+def MenuOne():
+    with open("passwords.txt", "r") as f:
+        text = f.read().strip()
+        if not text:
+            print("NO Password has been made yet")
+        else:
+            print(text)
 
 #The first menu to be accessed
+print("Password Generator, please use the number index to access the menu")
 while True:
-    print("Password Generator, please use the number index to access the menu")
-    print("1. Show last password made\n2. Create new password\n3. Delete last number")
+    print("1. Show last password made\n2. Create new password\n3. Delete last password")
     menu = input("Input: ")
     if menu.isdigit():
         menu = int(menu)
-        if menu > 0 and menu < 4:
+        #Menu 1: Show last password made
+        if menu == 1:
+            print("Menu 1")
+            MenuOne()
+            break
+        #Menu 2: Create new password
+        elif menu == 2:
+            print("Menu 2")
+            break
+        #Menu 3: Delete last password
+        elif menu == 3:
+            print("Menu 3")
             break
         else:
             print("Error: Please input the correct index (1, 2, 3)")
