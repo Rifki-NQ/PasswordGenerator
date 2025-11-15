@@ -17,6 +17,12 @@ def MenuOne():
         else:
             print(text)
 
+def MenuTwo():
+    PASS = password()
+    with open("passwords.txt", "a+") as f:
+        f.write(f"{PASS}\n")
+        print("New Password has been created!")
+
 #The first menu to be accessed
 print("Password Generator, please use the number index to access the menu")
 while True:
@@ -32,6 +38,7 @@ while True:
         #Menu 2: Create new password
         elif menu == 2:
             print("Menu 2")
+            MenuTwo()
             break
         #Menu 3: Delete last password
         elif menu == 3:
