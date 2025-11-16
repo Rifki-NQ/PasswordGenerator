@@ -19,8 +19,16 @@ def MenuOne():
 
 def MenuTwo():
     PASS = password()
-    with open("passwords.txt", "a+") as f:
-        f.write(f"{PASS}\n")
+    p = False
+    with open("passwords.txt", "r") as f:
+        x = f.read()
+        if not x:
+            p = True
+    with open("passwords.txt", "a") as f:
+        if p:
+            f.write(f"{PASS}")
+        else:
+            f.write(f"\n{PASS}")
         print("New Password has been created!")
 
 #The first menu to be accessed
