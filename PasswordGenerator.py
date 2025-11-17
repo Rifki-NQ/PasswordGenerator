@@ -31,6 +31,20 @@ def MenuTwo():
             f.write(f"\n{PASS}")
         print("New Password has been created!")
 
+def MenuThree():
+    with open("passwords.txt", "r+") as f:
+        x = f.readlines()
+        f.seek(0)
+        if len(x) == 0:
+            print("There is no password to delete")
+        else:
+            y = f.read()
+            y = y.replace(x[len(x) - 1], "")
+            y = y.strip()
+            f.seek(0)
+            f.truncate()
+            f.write(y)
+
 #The first menu to be accessed
 print("Password Generator, please use the number index to access the menu")
 while True:
@@ -42,17 +56,17 @@ while True:
         if menu == 1:
             print("Menu 1")
             MenuOne()
-            break
         #Menu 2: Create new password
         elif menu == 2:
             print("Menu 2")
             MenuTwo()
-            break
         #Menu 3: Delete last password
         elif menu == 3:
             print("Menu 3")
+            MenuThree()
+        elif menu == 10:
             break
         else:
             print("Error: Please input the correct index (1, 2, 3)")
     else:
-        print("Error: Plaese use the number index to access the menu")
+        print("Error: Please use the number index to access the menu")
