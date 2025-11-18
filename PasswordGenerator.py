@@ -11,11 +11,11 @@ def password():
 
 def MenuOne():
     with open("passwords.txt", "r") as f:
-        text = f.read().strip()
+        text = f.readlines()
         if not text:
             print("NO Password has been made yet")
         else:
-            print(text)
+            print(text[len(text) - 1])
 
 def MenuTwo():
     PASS = password()
